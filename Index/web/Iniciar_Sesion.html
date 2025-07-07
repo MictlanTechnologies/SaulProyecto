@@ -32,7 +32,7 @@
             <div class="d2">
                 <div class="log">
                     <h2>Iniciar Sesión</h2>
-                    <form method="post" action="Login">
+                    <form method="post" action="/Login">
                         <div class="nom_use">
                             <label for="usuario">Nombre de Usuario</label>
                             <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario">
@@ -45,15 +45,16 @@
                            Entrar
                         </button>
                         <p class="ent_cre">
-                            <div id="error-message" style="color:red; display:none;">Usuario o contraseña incorrecta</div>
+                            <a href="Crear_Cuenta.html">Crear cuenta</a>
                         </p>
+                    <div id="error-message" style="color:red; display:none;">Usuario o contraseña incorrecta</div>
                     </form>
-           	    <script>
+                    <script>
                         const params = new URLSearchParams(window.location.search);
                         if (params.get('error') === '1') {
                             document.getElementById('error-message').style.display = 'block';
                         }
-                    </script>
+                   </script>
                 </div>
             </div>
         </div>

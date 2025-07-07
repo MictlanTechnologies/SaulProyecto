@@ -32,7 +32,7 @@
             <div class="d2">
                 <div class="log">
                     <h2>Iniciar Sesión</h2>
-                    <form>
+                    <form method="post" action="/Login">
                         <div class="nom_use">
                             <label for="usuario">Nombre de Usuario</label>
                             <input type="text" id="usuario" name="usuario" placeholder="Ingresa tu usuario">
@@ -41,9 +41,9 @@
                             <label for="contrasena">Contraseña</label>
                             <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña">
                         </div>
-                        <a href="Opciones.html" class="ent_bot">
+                        <button type="submit" class="ent_bot">
                            Entrar
-                        </a>
+                        </button>
                         <p class="ent_cre">
                             <a href="Crear_Cuenta.html">Crear cuenta</a>
                         </p>
