@@ -29,10 +29,40 @@ SHOW WARNINGS;
 CREATE TABLE IF NOT EXISTS `NexSit`.`usuario` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(45) NOT NULL,
-  `contraseña` VARCHAR(45) NOT NULL,
+  `correo` VARCHAR(100) NOT NULL,
+  `contraseña` VARCHAR(255) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
-  `ubicacion` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`))
+  `ubicacion` VARCHAR(100) NOT NULL,
+  `rol` ENUM('cliente','admin') NOT NULL DEFAULT 'cliente',
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `usuario_UNIQUE` (`usuario` ASC),
+  UNIQUE INDEX `correo_UNIQUE` (`correo` ASC)
+)
+ENGINE = InnoDB;
+
+SHOW WARNINGS;
+
+-- -----------------------------------------------------
+-- Table `NexSit`.`citas`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `NexSit`.`citas` ;
+
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS `NexSit`.`citas` (
+  `id_cita` INT NOT NULL AUTO_INCREMENT,
+  `id_usuario` INT NULL,
+  `dia` DATE NOT NULL,
+  `hora` TIME NOT NULL,
+  `estado` ENUM('disponible','ocupado','cancelada') NOT NULL DEFAULT 'disponible',
+  PRIMARY KEY (`id_cita`),
+  INDEX `idx_citas_usuario` (`id_usuario` ASC),
+  INDEX `idx_citas_dia_hora` (`dia` ASC, `hora` ASC),
+  CONSTRAINT `fk_citas_usuario`
+    FOREIGN KEY (`id_usuario`)
+    REFERENCES `NexSit`.`usuario` (`id`)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE
+)
 ENGINE = InnoDB;
 
 SHOW WARNINGS;
