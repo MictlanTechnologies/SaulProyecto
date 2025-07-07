@@ -29,7 +29,7 @@ public class CitasHiberImpl implements GenericSql<Citas>, Ejecutable {
         try (Session session = HibernateUtil.getSession()) {
             return session
                     .createQuery(
-                            "select g from Gastos g join fetch g.usuario",
+                            "select c from Citas c left join fetch c.usuario",
                             Citas.class)
                     .getResultList();
         }
@@ -68,7 +68,7 @@ public class CitasHiberImpl implements GenericSql<Citas>, Ejecutable {
         if (managed != null) {
             session.remove(managed);
         } else {
-            System.out.println("> El gasto ya no existe en BD");
+            System.out.println("> La cita ya no existe en BD");
         }
         session.getTransaction().commit();
         session.close();

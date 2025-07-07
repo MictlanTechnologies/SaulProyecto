@@ -1,4 +1,4 @@
-// Paquete que contiene los catálogos relacionados con gastos (versión consola).
+// Paquete que contiene los catálogos relacionados con citas (versión consola).
 package model.catalogos.usuario;
 
 // Importación de clases necesarias: entidades, repositorios y utilidades.
@@ -11,6 +11,7 @@ import util.readUtil;
 import vista.acciones.gestorCatalogos;
 
 import java.sql.Date;
+import java.sql.Time;
 
 public class citasCatalogo extends gestorCatalogos<Citas> {
 
@@ -43,27 +44,20 @@ public class citasCatalogo extends gestorCatalogos<Citas> {
 
     @Override
     public boolean processNewT(Citas citas) {
-        System.out.print("> Teclee el nombre del artículo: ");
-        citas.setArticuloGasto(readUtil.read());
+        System.out.print("> Día de la cita (yyyy-MM-dd): ");
+        citas.setDia(Date.valueOf(readUtil.read()));
 
-        System.out.print("> Descripción: ");
-        citas.setDescripcionGastos(readUtil.read());
+        System.out.print("> Hora de la cita (HH:mm:ss): ");
+        citas.setHora(Time.valueOf(readUtil.read()));
 
-        System.out.print("> Monto: ");
-        citas.setMontoGastos(readUtil.readBigDecimal());
+        System.out.print("> Estado de la cita: ");
+        citas.setEstado(readUtil.read());
 
-        System.out.print("> Fecha (yyyy-MM-dd): ");
-        citas.setFechaGastos(Date.valueOf(readUtil.read()));
-
-        System.out.print("> Periodo: ");
-        citas.setPeriodoGastos(readUtil.read());
-
-        // Asociación con usuario existente
-        System.out.print("> ID del usuario que registra el gasto: ");
+        System.out.print("> ID del usuario asociado: ");
         Integer idUsuario = readUtil.readInt();
         Usuario usuario = usuarioHiber.findById(idUsuario);
         if (usuario == null) {
-            System.out.println("> ✖ No existe ese usuario. No se guardó el gasto.");
+            System.out.println("> ✖ No existe ese usuario. No se guardó la cita.");
             return false;
         }
         citas.setUsuario(usuario);
@@ -75,20 +69,14 @@ public class citasCatalogo extends gestorCatalogos<Citas> {
 
     @Override
     public boolean processEditT(Citas citas) {
-        System.out.print("> Teclee el nuevo nombre del artículo: ");
-        citas.setArticuloGasto(readUtil.read());
+        System.out.print("> Nuevo día (yyyy-MM-dd): ");
+        citas.setDia(Date.valueOf(readUtil.read()));
 
-        System.out.print("> Nueva Descripción: ");
-        citas.setDescripcionGastos(readUtil.read());
+        System.out.print("> Nueva hora (HH:mm:ss): ");
+        citas.setHora(Time.valueOf(readUtil.read()));
 
-        System.out.print("> Nuevo Monto: ");
-        citas.setMontoGastos(readUtil.readBigDecimal());
-
-        System.out.print("> Nueva Fecha (yyyy-MM-dd): ");
-        citas.setFechaGastos(Date.valueOf(readUtil.read()));
-
-        System.out.print("> Nuevo Periodo: ");
-        citas.setPeriodoGastos(readUtil.read());
+        System.out.print("> Nuevo estado: ");
+        citas.setEstado(readUtil.read());
 
         System.out.print("> ID de usuario (ENTER para dejar igual): ");
         String inp = readUtil.read();

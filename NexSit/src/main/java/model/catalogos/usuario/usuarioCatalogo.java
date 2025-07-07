@@ -46,11 +46,23 @@ public class usuarioCatalogo extends gestorCatalogos<Usuario> {
 
     @Override
     public boolean processNewT(Usuario usuario) {
-        System.out.print("> Teclee su nombre de Perfil: ");
-        usuario.setPerfilUsuario(readUtil.read());
+        System.out.print("> Usuario: ");
+        usuario.setUsuario(readUtil.read());
 
-        System.out.print("> Teclee su contraseña de Perfil: ");
-        usuario.setContraseñaUsuario(readUtil.read());
+        System.out.print("> Correo: ");
+        usuario.setCorreo(readUtil.read());
+
+        System.out.print("> Contraseña: ");
+        usuario.setContraseña(readUtil.read());
+
+        System.out.print("> Teléfono: ");
+        usuario.setTelefono(readUtil.read());
+
+        System.out.print("> Ubicación: ");
+        usuario.setUbicacion(readUtil.read());
+
+        System.out.print("> Rol (cliente/admin): ");
+        usuario.setRol(readUtil.read());
 
         usuarioHiber.save(usuario);
         return true;
@@ -58,11 +70,23 @@ public class usuarioCatalogo extends gestorCatalogos<Usuario> {
 
     @Override
     public boolean processEditT(Usuario usuario) {
-        System.out.print("> Teclee su nuevo nombre de Perfil: ");
-        usuario.setPerfilUsuario(readUtil.read());
+        System.out.print("> Nuevo usuario: ");
+        usuario.setUsuario(readUtil.read());
 
-        System.out.print("> Teclee su nueva contraseña de Perfil: ");
-        usuario.setContraseñaUsuario(readUtil.read());
+        System.out.print("> Nuevo correo: ");
+        usuario.setCorreo(readUtil.read());
+
+        System.out.print("> Nueva contraseña: ");
+        usuario.setContraseña(readUtil.read());
+
+        System.out.print("> Nuevo teléfono: ");
+        usuario.setTelefono(readUtil.read());
+
+        System.out.print("> Nueva ubicación: ");
+        usuario.setUbicacion(readUtil.read());
+
+        System.out.print("> Nuevo rol: ");
+        usuario.setRol(readUtil.read());
 
         usuarioHiber.update(usuario);
         return true;
