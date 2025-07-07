@@ -131,6 +131,24 @@ public class UsuarioHiberImpl implements GenericSql<Usuario>, Ejecutable {
     }
 
     /**
+     * Busca un usuario por su nombre de usuario y contraseña.
+     * @param usuario nombre de usuario.
+     * @param contrasena contraseña en texto plano.
+     * @return instancia de {@code Usuario} si las credenciales son válidas, o
+     *         {@code null} en caso contrario.
+     */
+    public Usuario findByUsuarioAndContraseña(String usuario, String contrasena) {
+        try (Session session = HibernateUtil.getSession()) {
+            return session.createQuery(
+                            "FROM Usuario u WHERE u.usuario = :usuario AND u.contraseña = :contrasena",
+                            Usuario.class)
+                    .setParameter("usuario", usuario)
+                    .setParameter("contrasena", contrasena)
+                    .uniqueResult();
+        }
+    }
+
+    /**
      * Método sobrescrito para ejecución autónoma desde UI o CLI.
      */
     @Override

@@ -47,6 +47,15 @@
             <version>1.18.30</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- API de servlets para la capa web -->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
 </project>
