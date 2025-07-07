@@ -45,9 +45,15 @@
                            Entrar
                         </button>
                         <p class="ent_cre">
-                            <a href="Crear_Cuenta.html">Crear cuenta</a>
+                            <div id="error-message" style="color:red; display:none;">Usuario o contraseña incorrecta</div>
                         </p>
                     </form>
+           	    <script>
+                        const params = new URLSearchParams(window.location.search);
+                        if (params.get('error') === '1') {
+                            document.getElementById('error-message').style.display = 'block';
+                        }
+                    </script>
                 </div>
             </div>
         </div>
