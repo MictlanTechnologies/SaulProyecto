@@ -38,5 +38,17 @@
         
     </table>
                 </div>
+      <script>
+            fetch('/Citas')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.length > 0) {
+                        const c = data[0];
+                        document.querySelector('.dia').textContent = c.dia;
+                        document.querySelector('.hora').textContent = c.hora;
+                    }
+                })
+                .catch(err => console.error(err));
+        </script>
     </body>
 </html>
