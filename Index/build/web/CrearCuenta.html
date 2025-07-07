@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexsit - Bienvenido</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+.contenedor-principal {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.seccion-opciones {
+    flex: 1;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.seccion-opciones h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.btn-opcion {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 10px 0;
+    width: 150px;
+    text-align: center;
+}
+.btn-opcion:hover {
+    background-color: #fff;
+    color: #333;
+}
+.seccion-formulario {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.seccion-formulario.active {
+    display: flex;
+}
+.contenedor-formulario {
+    width: 100%;
+    max-width: 350px;
+}
+.contenedor-formulario h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+.grupo {
+    margin-bottom: 15px;
+}
+.grupo label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+.grupo input, .grupo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+.boton-enviar {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: opacity 0.2s ease;
+}
+.boton-enviar:hover {
+    opacity: 0.8;
+}
+</style>
+</head>
+<body>
+<div class="contenedor-principal">
+    <div class="seccion-opciones">
+        <h1>Nexsit</h1>
+        <button class="btn-opcion" onclick="mostrarFormulario('usuario')">Usuario</button>
+        <button class="btn-opcion" onclick="mostrarFormulario('empresa')">Empresa</button>
+    </div>
+    <div class="seccion-formulario" id="formulario-usuario">
+        <div class="contenedor-formulario">
+            <h2>Registro Usuario</h2>
+            <form id="formUsuario" onsubmit="enviarFormulario(event, 'usuario')">
+                <div class="grupo">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+                <div class="grupo">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+                <div class="grupo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="grupo">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" required>
+                </div>
+                <div class="grupo">
+                    <label for="ubicacion">Ubicación</label>
+                    <select id="ubicacion" name="ubicacion" required>
+                        <option value="">Seleccionar</option>
+                        <option value="Estado de México">Estado de México</option>
+                    </select>
+                </div>
+                <button type="submit" class="boton-enviar">Registrar</button>
+            </form>
+        </div>
+    </div>
+    <div class="seccion-formulario" id="formulario-empresa">
+        <div class="contenedor-formulario">
+            <h2>Registro Empresa</h2>
+            <form id="formEmpresa" onsubmit="enviarFormulario(event, 'empresa')">
+                <div class="grupo">
+                    <label for="nombre_empresa">Nombre</label>
+                    <input type="text" id="nombre_empresa" name="nombre_empresa" required>
+                </div>
+                <div class="grupo">
+                    <label for="correo">Correo</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="grupo">
+                    <label for="telefono_empresa">Teléfono</label>
+                    <input type="tel" id="telefono_empresa" name="telefono_empresa" required>
+                </div>
+                <div class="grupo">
+                    <label for="contrasena_empresa">Contraseña</label>
+                    <input type="password" id="contrasena_empresa" name="contrasena_empresa" required>
+                </div>
+                <div class="grupo">
+                    <label for="horario">Horario Laboral</label>
+                    <input type="text" id="horario" name="horario" placeholder="Ej: Lunes a Viernes 9:00-18:00" required>
+                </div>
+                <button type="submit" class="boton-enviar">Registrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+function mostrarFormulario(tipo) {
+    document.getElementById('formulario-usuario').classList.remove('active')
+    document.getElementById('formulario-empresa').classList.remove('active')
+    if (tipo === 'usuario') {
+        document.getElementById('formulario-usuario').classList.add('active')
+    } else {
+        document.getElementById('formulario-empresa').classList.add('active')
+    }
+}
+function enviarFormulario(evento, tipo) {
+    evento.preventDefault()
+    window.location.href = 'index.html'
+}
+</script>
+</body>
+</html>

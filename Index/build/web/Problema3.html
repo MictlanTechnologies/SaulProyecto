@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ropa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function funcgral(botoncito) {
+                var num11 = document.getElementById('num1');
+                var cadenita = botoncito.name;             
+                if (cadenita === "ralp") {
+                    if (parseInt(num11.value) > 3) {
+
+                        alert('El costo total es de : ' + (parseInt(num11.value) * 850));
+                    } else
+                        alert('El costo total es de : ' + (parseInt(num11.value) * 1000));
+                } else if (cadenita === "tommy") {
+                    if (parseInt(num11.value) > 3) {
+
+                        alert('El costo total es de : ' + (parseInt(num11.value) * 1020));
+                    } else
+                        alert('El costo total es de : ' + (parseInt(num11.value) * 1200));
+                } else if (cadenita === "hugo") {
+                    if (parseInt(num11.value) > 3) {
+
+                        alert('El costo total es de : ' + (parseInt(num11.value) * 1275));
+                    } else
+                        alert('El costo total es de : ' + (parseInt(num11.value) * 1500));
+                } else if (cadenita === "nau") {
+                    if (parseInt(num11.value) > 3) {
+
+                        alert('El costo total es de : ' + (parseInt(num11.value) * 1700));
+                    } else
+                        alert('El costo total es de : ' + (parseInt(num11.value) * 2000));
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Cuantas Camisas
+        <br><br>  
+        <input type="text" id="num1">
+        <br><br>  
+
+
+        <input type="button" onClick="funcgral(this)"  
+               value="Ralph Lauren" name="ralp">
+        <br><br>  
+        <input type="button" onClick="funcgral(this)"  
+               value="Tommy Hilfiger" name="tommy">
+        <br><br>  
+        <input type="button" onClick="funcgral(this)"  
+               value="Hugo Boss" name="hugo">
+        <br><br>  
+        <input type="button" onClick="funcgral(this)"  
+               value="Nautica" name="nau">
+        <br><br>  
+    </body>
+</html>

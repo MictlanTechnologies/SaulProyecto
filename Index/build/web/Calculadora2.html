@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+        <link rel="stylesheet" href="Calculadora2.css"/>
+        <script>
+            function funcgral(botoncito){
+                var num11 = document.getElementById('num1'); 
+                var num12 = document.getElementById('num2'); 
+                var cadenita = botoncito.name;
+
+                if (cadenita === "multi") {  
+                    alert('El resultado de la multipilicacion es: ' + ""
+                        + (parseInt(num1.value) * parseInt(num2.value)));
+                } 
+                else if (cadenita === "divi")  {            
+                   alert('El resultado de la division es: ' + ""
+                        + (parseInt(num1.value) / parseInt(num2.value))); 
+                }
+                else if (cadenita === "sum")  { 
+                    alert('El resultado de la suma es: ' + ""
+                        + (parseInt(num1.value) + parseInt(num2.value)));
+                }
+                else if (cadenita === "rest")  {            
+                    alert('El resultado de la resta es: ' + ""
+                        + (parseInt(num1.value) - parseInt(num2.value)));
+                }
+                
+                
+                
+            }
+        </script>
+    </head>
+    <body>
+       <form>
+            <div class="principal">
+                <div class="uno">
+                    dato 1
+                    <input type="text" id="num1">
+                    <br><br>
+                    dato 2
+                    <input type="text" id="num2">
+                    <br><br>
+                </div>
+                <div class="dos">
+                    <input type="button" onClick="funcgral(this)"
+                           value="Multiplicacion" name="multi">
+                    <br><br>
+                    <input type="button" onClick="funcgral(this)"
+                           value="Division" name="divi">
+                    <br><br>
+                    <input type="button" onClick="funcgral(this)"
+                           value="Suma" name="sum">
+
+                    <br><br>
+                    <input type="button" onClick="funcgral(this)"
+                           value="Resta" name="rest">
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

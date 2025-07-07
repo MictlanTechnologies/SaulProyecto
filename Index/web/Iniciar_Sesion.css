@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to right, #000 50%, #FFF 50%);
+    color: #FFF;
+}
+
+.header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 5px 3%;
+    border-bottom: 1px solid white;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.logonex img {
+    width: 60px;
+    height: auto;
+}
+
+.header .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 25px;
+    position: relative;
+}
+
+.header .nav-links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background-color: white;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.Iniciar img {
+    width: 44px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.Iniciar_Sesion {
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    gap: 8px;
+    font-family: 'Times New Roman', serif;
+}
+
+.nom_pro {
+    display: flex;
+    width: 900px;
+    height: 550px;
+    background: linear-gradient(to right, #000 50%, #FFF 50%);
+    overflow: hidden;
+    margin: auto;
+    flex-grow: 1;
+}
+
+.d1 {
+    flex: 1;
+    background-color: #000;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    border-right: 1px solid #FFF;
+}
+
+.nombre-empresa {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.eslogan {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.btn-ver-mas {
+    background-color: transparent;
+    color: #FFF;
+    border: 1px solid #FFF;
+    padding: 10px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.d2 {
+    flex: 1;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: #000;
+}
+
+.log {
+    width: 100%;
+    max-width: 350px;
+    color: #000;
+}
+
+.log h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.nom_use {
+    margin-bottom: 20px;
+}
+
+.nom_use label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.nom_use input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000;
+    background-color: #FFF;
+    color: #000;
+    font-size: 1rem;
+}
+
+.nom_use input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.contra {
+    margin-bottom: 20px;
+}
+
+.contra label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.contra input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000;
+    background-color: #FFF;
+    color: #000;
+    font-size: 1rem;
+}
+
+.contra input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.ent_bot {
+   
+    display: block;
+  
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-entrar {
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.btn-entrar:hover {
+    background-color: #333;
+}
+
+.ent_cre {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+.ent_cre a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+}

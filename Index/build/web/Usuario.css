@@ -1,0 +1,147 @@
+* {
+    font-family: 'Times New Roman', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.header {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 5px 3%;
+    border-bottom: 1px solid white;
+}
+
+.body {
+    background-color: black;
+}
+
+.header .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px; 
+}
+
+.logonex img {
+    width: 60px;
+    height: auto;
+}
+
+.Iniciar img {
+    width: 44px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.Iniciar_Sesion {
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    gap: 8px; 
+     font-family: 'Times New Roman', serif;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 25px; 
+    position: relative;
+}
+
+.header .nav-links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background-color: white;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+.Titulo{
+ color:white;
+    font-size: 25px;
+   padding: 22px;
+}
+.User_des{
+    color:white;
+}
+.botones{
+    display:flex;
+    
+}
+.btn_mod{
+   
+    color:white;
+    font-size: 17px;
+  
+}
+.btn_bor{
+    color:white;
+font-size: 17px;
+
+}
+
+.TBL_despliega_cuenta {
+    width: auto;
+    margin: 40px auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+   
+    padding: 20px;
+    color: white;
+    background-color: transparent;
+    font-size: 17px;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+
+.TBL_despliega_cuenta th,
+.TBL_despliega_cuenta td {
+    text-align: left;
+    padding: 10px;
+}
+
+
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btns {
+    display: block;
+    padding: 12px 24px;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+    
+    min-width: 180px;
+}
+
+.btns:hover {
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,28 @@
+.div{
+    
+     float: left;
+}
+.principal{
+    
+    display: table ;
+    height: 1000px;
+    width: 1000px;
+}
+.uno{
+   height: 500px;
+    width: 500px;
+    background-color: lightblue;
+     float: left;
+    
+    
+}
+
+
+.dos{
+    height: 500px;
+     width: 500px;
+      background-color: lightpink;
+    
+     float: right;
+}
+

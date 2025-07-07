@@ -1,0 +1,148 @@
+* {
+    font-family: 'Times New Roman', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    overflow-x: hidden; 
+     overflow-y: hidden; 
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, black 50%, white 50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 5px 3%;
+    border-bottom: 1px solid white;
+}
+
+.logonex img {
+    width: 60px;
+    height: auto;
+}
+
+.header .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 25px;
+    position: relative;
+}
+
+.header .nav-links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60%;
+    background-color: white;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.Iniciar img {
+    width: 44px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.Iniciar_Sesion {
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    gap: 8px;
+}
+
+.LI {
+    background-color:transparent;
+}
+
+.LI img {
+
+}
+
+.nex_log{
+    height:350px ;
+    width:auto;
+    transform: translateY(27%);
+}
+
+.Bienvenida{
+    display:inline;
+    transform: translate(26%, -200%);
+    color:white;
+}
+.LD{
+    display:inline;
+    transform: translate(55%, -430%);
+    color:black;
+}
+
+.Muestra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transform: translate(25%, -70%);
+    margin-top: -100px;
+}
+
+.slider {
+    width: 600px; 
+    height: 281px; 
+    overflow: hidden;
+    position: relative;
+    background: transparent;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    width: 600px; 
+    height: 281px; 
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
+}
+
+input[type="radio"] {
+    display: none;
+    outline: none;
+}

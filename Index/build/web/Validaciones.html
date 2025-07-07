@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Validaciones</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function valletras(e) {
+                var letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                var x = e.which || e.keyCode;
+                var letra = String.fromCharCode(x);
+                return letras.includes(letra);
+            }
+
+            function desplegar() {
+                var cuadrito1 = document.getElementById("textito");
+                var cuadrito2 = document.getElementById("textito2");
+                alert(cuadrito1.value + " " + cuadrito2.value);
+                cuadrito1.focus();
+            }
+
+            function validar() {
+                var cuadro1 = document.getElementById("textito");
+                if (cuadro1.value === '') {
+                    alert('Teclea letras');
+                    cuadro1.focus();
+                    return false;
+                }
+
+                var cuadro2 = document.getElementById("textito2");
+                if (cuadro2.value === '') {
+                    alert('Teclea letras');
+                    cuadro2.focus();
+                    return false;
+                }
+
+                alert(cuadro1.value + " " + cuadro2.value);
+            }
+
+            function apunta() {
+                document.getElementById("textito").focus();
+            }
+        </script>
+    </head>
+    <body onload="apunta()">
+        <form>
+            Letras: <input type="text" id="textito" onkeypress="return valletras(event)"/>
+            <br><br>
+            Otras letras: <input type="text" id="textito2" onkeypress="return valletras(event)"/>
+            <br><br> 
+            <input type="button" value="Desplegar" onClick="desplegar();">
+            <br><br> 
+            <input type="button" value="Validar" onClick="validar();">
+        </form>
+    </body>
+</html>

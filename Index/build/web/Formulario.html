@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Fútbol</title>
+</head>
+<body>
+  
+    <form action="formulario.jsp" method="post">
+        Nombre del jugador
+        <input type="text" name="nombre">
+        <br><br>
+        Número de camiseta:
+        <input type="text" name="numero">
+        <br><br>
+        Posición:
+        <input type="radio" name="posicion" value="Portero">Portero
+        <input type="radio" name="posicion" value="Defensa">Defensa
+        <input type="radio" name="posicion" value="Mediocampista">Mediocampista
+        <input type="radio" name="posicion" value="Delantero">Delantero
+        <br><br>
+        Liga:
+        <select name="liga">
+            <option value="">Seleccione</option>
+            <option value="La Liga">La Liga</option>
+            <option value="Premier League">Premier League</option>
+        </select>
+        <br><br>
+        Equipo:
+        <select name="equipo">
+            <option value="">Seleccione</option>
+            <option value="Real Madrid">Real Madrid</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Manchester United">Manchester United</option>
+            <option value="Liverpool">Liverpool</option>
+        </select>
+        <br><br>
+        Habilidades:
+        <br>
+        <input type="checkbox" name="habilidades" value="Velocidad">Velocidad
+        <br>
+        <input type="checkbox" name="habilidades" value="Técnica">Técnica
+        <br>
+        <input type="checkbox" name="habilidades" value="Resistencia">Resistencia
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

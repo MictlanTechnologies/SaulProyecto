@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Puesto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function mostrarSeleccion() {
+            var puestoRadios = document.getElementsByName("puesto");
+            var turnoRadios = document.getElementsByName("turno");
+            var sexoSelect = document.getElementById("sexo").value;
+            
+            var puestoSeleccionado = "";
+            var turnoSeleccionado = "";
+            
+            for (var i = 0; i < puestoRadios.length; i++) {
+                if (puestoRadios[i].checked) {
+                    puestoSeleccionado = puestoRadios[i].value;
+                    break;
+                }
+            }
+            
+            for (var i = 0; i < turnoRadios.length; i++) {
+                if (turnoRadios[i].checked) {
+                    turnoSeleccionado = turnoRadios[i].value;
+                    break;
+                }
+            }
+            
+            alert("Puesto: " + puestoSeleccionado + "\nTurno: " + turnoSeleccionado + "\nSexo: " + sexoSelect);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        
+          Puesto
+            <input type="radio" name="puesto" value="Funcionario"> Funcionario
+            <input type="radio" name="puesto" value="Profe"> Profe
+            <input type="radio" name="puesto" value="Apoyo"> Apoyo
+       
+        <br>
+        
+      
+            Turno
+            <input type="radio" name="turno" value="Matutino"> Matutino
+            <input type="radio" name="turno" value="Vespertino"> Vespertino
+            <input type="radio" name="turno" value="Nocturno"> Nocturno
+        
+        <br>
+        
+        <label for="sexo">Sexo:</label>
+        <select id="sexo">
+            <option value="Selecciona">Selecciona</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+        </select>
+        <br><br>
+        
+        <input type="button" value="Mostrar Selección" onclick="mostrarSeleccion()">
+    </form>
+</body>
+</html>

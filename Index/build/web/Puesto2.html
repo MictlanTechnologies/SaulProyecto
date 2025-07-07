@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Puesto</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script>
+        function mostrarSeleccion() {
+            var puesto = document.getElementById("puesto").value;
+            var turno = document.getElementById("turno").value;
+            var sexo = document.getElementById("sexo").value;
+            
+            alert("Puesto: " + puesto + "\nTurno: " + turno + "\nSexo: " + sexo);
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="puesto">Puesto:</label>
+        <select id="puesto">
+            <option value="Selecciona">Selecciona</option>
+            <option value="Funcionario">Funcionario</option>
+            <option value="Profe">Profe</option>
+            <option value="Apoyo">Apoyo</option>
+        </select>
+        <br><br>
+        
+        <label for="turno">Turno:</label>
+        <select id="turno">
+            <option value="Selecciona">Selecciona</option>
+            <option value="Matutino">Matutino</option>
+            <option value="Vespertino">Vespertino</option>
+            <option value="Nocturno">Nocturno</option>
+        </select>
+        <br><br>
+        
+        <label for="sexo">Sexo:</label>
+        <select id="sexo">
+            <option value="Selecciona">Selecciona</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+        </select>
+        <br><br>
+        
+        <input type="button" value="Mostrar Selección" onclick="mostrarSeleccion()">
+    </form>
+</body>
+</html>
+

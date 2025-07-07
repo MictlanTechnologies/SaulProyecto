@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Figuras</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+        <script>
+            function funcgral(botoncito){
+                var num11 = document.getElementById('num1'); 
+                var num12 = document.getElementById('num2'); 
+                var cadenita = botoncito.name;
+
+                if (cadenita === "triangulo") {  
+                    alert('El área del triángulo es de: ' + ((parseInt(num11.value) * parseInt(num12.value)) / 2));
+                    alert('El perímetro del triángulo es de: ' + (3 * parseInt(num11.value)));
+                } 
+                else if (cadenita === "rectangulo")  {            
+                    alert('El área del rectángulo es de: ' + (parseInt(num11.value) * parseInt(num12.value)));
+                    alert('El perímetro del rectángulo es de: ' + (2 * parseInt(num11.value) + 2 * parseInt(num12.value)));
+                }
+            }
+        </script>
+    </head>
+    <body>
+       Base
+        <br><br>  
+    <input type="text" id="num1">
+    <br><br>  
+    Altura
+        <br><br>  
+    <input type="text" id="num2">
+      <br><br>      
+    <input type="button" onClick="funcgral(this)"  
+           value="Triangulo" name="triangulo">
+    <br><br>  
+    <input type="button" onClick="funcgral(this)"  
+           value="Rectangulo" name="rectangulo">
+    <br><br>  
+    </body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var matl = ["Miguel Hidalgo", "Azcapo", "Cuauhtemoc", "Centro"];
+
+        function borrar() {
+            var mdel = document.getElementById("menudel");
+            var cuantos = mdel.length;
+            for (var contador = 1; contador < cuantos; contador++) {
+                mdel.options[1] = null;
+            }
+        }
+
+        function agregados() {
+            var mdel = document.getElementById("menudel");
+            for (contador = 0; contador < matl.length; contador++) {
+                mdel.options[contador + 1] = new Option(matl[contador]);
+            }
+        }
+
+        function desplegar() {
+            var desplegable = document.getElementById("menudel");
+            agregados(); 
+            desplegable.style.display = "inline-block"; 
+        }
+    </script>
+</head>
+<body>
+    <form name="fdels">
+        <select id="menudel" style="display: none;">
+            <option value="x">elija una alcaldia</option>
+        </select>
+        <input type="button" value="borrar" onclick="borrar();">
+        <input type="button" value="agregar" onclick="agregados();">
+        <input type="button" value="Desplegar" onclick="desplegar();">
+    </form>
+</body>
+</html>

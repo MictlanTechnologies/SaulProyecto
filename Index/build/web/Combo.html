@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Combo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function calcular(){
+                var datoo1 = document.getElementById("num1");
+                var datoo2 = document.getElementById("num2");
+                var dat1 = parseInt(datoo1.value);
+                var dat2 = parseInt(datoo2.value);
+                var x = document.getElementById("operaciones").selectedIndex;
+                var todos = document.getElementById("operaciones").options;
+                var numero = todos[x].index;
+                if (numero === 1)
+                    alert("la suma es " + (dat1 + dat2));
+                else if (numero === 2)
+                    alert("la resta es " + (dat1 - dat2));
+                else if (numero === 3)
+                    alert("la multiplicacion es " + (dat1 * dat2));
+                else if (numero === 4)
+                    alert("la division es " + (dat1 / dat2));
+            }
+        </script>
+    </head>
+    <body>
+        <select id="operaciones" onchange="calcular()">
+            <option value="opca">Selecciona alguna</option>
+            <option value="opca">suma</option>
+            <option value="opcb">resta</option>
+            <option value="opcc">multiplicacion</option>
+            <option value="opcad">division</option>
+        </select>
+        <br><br><br><br><br><br><br>
+        dato1
+        <input type="text" id="num1">
+        <br><br>
+        dato2
+        <input type="text" id="num2">
+        <br><br>
+    </body>
+</html>

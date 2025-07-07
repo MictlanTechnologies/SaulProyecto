@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RadiosBotones</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+        function cual() {
+            var radios = document.getElementsByName('opera');
+            var num11 = document.getElementById("num1");
+            var num22 = document.getElementById("num2");
+            var cadenita = '';
+
+            var cuantos = radios.length;
+
+            for (var i = 0; i < cuantos; i++)
+                if (radios[i].checked) {
+                    if (radios[i].value === 'suma') {
+                        alert("suma" + (parseInt(num11.value) + parseInt(num22.value)));
+                        break;
+                    } else if (radios[i].value === 'resta') {
+                        alert("resta" + (parseInt(num11.value) - parseInt(num22.value)));
+                        break;
+                    } else if (radios[i].value === 'multiplica') {
+                        alert("multiplica" + (parseInt(num11.value) * parseInt(num22.value)));
+                        break;
+                    } else if (radios[i].value === 'divide') {
+                        alert("divide" + (parseInt(num11.value) / parseInt(num22.value)));
+                        break;
+                    }
+                }
+        }
+    </script>
+
+</head>
+<body>
+    <form>
+        numero 1 <input type="text" id="num1">
+        numero 2 <input type="text" id="num2">        
+        <br><br><br>
+
+        <input type="radio" id="botons" name="opera" value="suma">
+        <label> Suma </label>
+        <input type="radio" id="botonr" name="opera" value="resta">
+        <label> Resta </label>
+        <input type="radio" id="botonm" name="opera" value="multiplica">
+        <label> Multiplicacion </label>
+        <input type="radio" id="botond" name="opera" value="divide">
+        <label> Division </label>
+        <br><br>
+        <input type="button" value="valida" onClick="cual()">    
+    </form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Conócenos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="logonex">
+                <img src="nex_log_white.png" alt="Logo">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Conócenos</a></li>
+                    <li><a href="Historia.html">Historia</a></li>
+                    <li><a href="Contactos.html">Contactos</a></li>
+                </ul>
+            </nav>
+            <a href="Iniciar_Sesion.html" class="Iniciar">
+                <button class="Iniciar_Sesion">
+                    <img src="logo_user.png" alt="Usuario"> Iniciar Sesión / Crear Cuenta
+                </button>
+            </a>
+        </header>
+
+        <div class="LI">
+            <img src="nex_log_white.png" alt="Demostración de NEXSIT" class="nex_log">
+        </div>
+        <div class="Bienvenida">
+            <p class="Bienvenida_Nexit">!Bienvenido a NEXSIT¡</p>
+            <p class="Slogan">La pagina web que esta aqui para ti</p>
+            <p class="Explicaion">facil , rapido al alcance de un clik</p>
+        </div>
+
+        <div class="LD">
+            <p>Explora y descubre el metodo inovador de obtener una cita en tus lugares favoritos</p>
+            <p>!como en el cine¡ elije tu cupo por medio de un horario dinamico en el cual te va  </p>
+            <p>a permitir visualizar los espacios disponibles y cupados. </p>
+            <p>¿Deseas conocernos ya? ¡Registrate YA!</p>
+        </div>
+        <div class="Muestra">
+            <div class="slider">
+                <div class="slides">
+                    <input type="radio" name="radio-btn" id="radio1" checked>
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+
+                    <div class="slide first">
+                        <img src="scn1.png" alt="Imagen 1" class="scn11">
+                    </div>
+                    <div class="slide">
+                        <img src="scn2.png" alt="Imagen 2" class="scn22">
+                    </div>
+                    <div class="slide">
+                        <img src="scn3.png" alt="Imagen 3" class="scn33">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let counter = 1;
+            setInterval(() => {
+                document.getElementById('radio' + counter).checked = true;
+                document.querySelector('.slides').style.transform = `translateX(-${(counter - 1) * 600}px)`; /* Updated to 700px */
+                counter++;
+                if(counter > 3){
+                    counter = 1;
+                }
+            }, 3000);
+        </script>
+    </body>
+</html>

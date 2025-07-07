@@ -1,0 +1,50 @@
+
+<html>
+    <head>
+        <title>Checks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script>
+            function verifica() {
+                var check1 = document.getElementById("fut");
+                var check2 = document.getElementById("basket");
+                var check3 = document.getElementById("beis");
+                var cuadro1 = document.getElementById("res");
+                var resultado = "";
+
+                if (check1.checked)
+                    resultado += "Usted practica fútbol\n";
+                else
+                    resultado += "Usted no practica fútbol\n";
+
+                if (check2.checked)
+                    resultado += "Usted practica básquetbol\n";
+                else
+                    resultado += "Usted no practica básquetbol\n";
+
+                if (check3.checked)
+                    resultado += "Usted practica béisbol\n";
+                else
+                    resultado += "Usted no practica béisbol\n";
+
+                cuadro1.value= resultado;
+               
+            }
+        </script>
+    
+    </head>
+    <body>
+        <div>
+            Fútbol: <input type="checkbox" id="fut" value="futbol">
+            <br><br>
+            Básquetbol: <input type="checkbox" id="basket" value="basket">
+            <br><br>
+            Béisbol: <input type="checkbox" id="beis" value="beisbol">
+            <br><br>
+            <textarea name="mostrarresultado" id="res" rows="6" cols="30"></textarea>
+            <br><br>
+            <input type="button" value="Verificar" id="comprobar" onclick="verifica()">
+        </div>
+    </body>
+</html>

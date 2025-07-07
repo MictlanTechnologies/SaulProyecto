@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #FFF;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.nombre-empresa-superior {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #FFF;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.caja-formulario {
+    width: 400px;
+    background-color: #FFF;
+    padding: 30px;
+    color: #000;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.grupo-entrada {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.grupo-entrada label {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #000;
+}
+
+.grupo-entrada input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000;
+    background-color: #FFF;
+    color: #000;
+    font-size: 1rem;
+}
+
+.grupo-entrada input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.btn-registrar-link {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #FFF;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-registrar-link:hover {
+    background-color: #FFF;
+    color: #000;
+}
+
+.enlace-ya-tienes-cuenta {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #000;
+}
+
+.enlace-ya-tienes-cuenta a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.enlace-ya-tienes-cuenta a:hover {
+    color: #333;
+}
